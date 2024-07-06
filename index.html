@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+    <section id="hero" class="relative min-h-screen bg-blue-50 flex items-center justify-center">
+        <div
+            class="max-w-[1200px] z-50 flex flex-wrap items-center justify-center gap-10 mx-auto px-5 sm:px-5 py-28 md:py-0 lg:flex-row flex-col">
+
+            <div class="">
+                <div class="w-fit mb-5">
+                    <div id="countdown" class="text-center w-fit border-color px-8 pt-5 pb-8 relative mb-5">
+                        <div class="absolute bg-white px-5 py-1 rounded-2xl next-price">
+                            <p class="text-sm font-semibold">Next price</p>
+                            <p class="text-base span-text__color font-bold text-xl">$0.02938</p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="font-bold text-color">Before Price Increase</p>
+                        </div>
+                        <div class="flex gap-3 text-white">
+                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                                <span id="days" class="counter-feed">00</span>
+                                <span style="font-size: 15px;">Day</span>
+                            </div>
+                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                                <span id="hours" class="counter-feed">00</span>
+                                <span style="font-size: 15px;">Hrs</span>
+                            </div>
+                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                                <span id="minutes" class="counter-feed ">00</span>
+                                <span style="font-size: 15px;">Mins</span>
+                            </div>
+                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                                <span id="seconds" class="counter-feed">00</span>
+                                <span style="font-size: 15px;">Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1
+                    class="max-w-xl text-4xl leading-none text-color font-bold font-sans text-center lg:text-5xl lg:text-right lg:leading-tight">
+                    Revolutionary<br />
+                    <span class="span-text__color">Crypto</span><br />
+                    Payment Gateway<br />
+                </h1>
+                <div class="justify-center lg:justify-end items-center flex md:flex-row flex-col gap-5 mt-10 sm:mt-5">
+                    <button class="custom-button">
+                        Whitepaper
+                    </button>
+                    <button class="custom-button">
+                        Audit Paper
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="w-full max-w-md form-card__bg px-6 pt-6 p-5 rounded-lg shadow-md">
+                    <div class="flex items-center justify-center flex-col">
+                        <h2 class="font-bold text-md text-heading">Buy Peernetics Now!</h2>
+                        <p class="text-sm text-description">USD Raised: <span
+                                class="font-semibold text-heading">$2.070,492</span> / <span
+                                class="font-semibold text-heading">$2,076,196</span></p>
+                        <hr class="horizontal-rule h-2 bg-blue-300 border-none outline-none rounded-full w-full my-2">
+                        <p class="text-sm font-semibold text-heading">1PNS = <span class="font-semibold text-description">$0.02852</span></p>
+                    </div>
+
+                    <!-- Deposit Methods -->
+                    <div class="w-full flex items-center justify-between my-3">
+                        <!-- crypto deposit -->
+                        <div id="cryptoBtn"
+                            class="flex items-center justify-center w-full cursor-pointer gap-1 active-underline active"
+                            onclick="switchPaymentMethod('crypto')">
+                            <i class="fa-brands fa-bitcoin text-lg"></i>
+                            <p class="font-semibold text-md">Crypto</p>
+                        </div>
+                        <!-- card deposit -->
+                        <div id="cardBtn"
+                            class="flex items-center justify-center w-full cursor-pointer gap-1 text-gray-500 inactive"
+                            onclick="switchPaymentMethod('card')">
+                            <i class="fa-solid fa-credit-card text-lg"></i>
+                            <p class="font-semibold text-lg">Credit Card</p>
+                        </div>
+                    </div>
+
+                    <form id="paymentForm">
+                        <!-- Blockchain Selection -->
+                        <div class="dropdown relative inline-block w-full">
+                            <div class="dropdown-selected rounded-2xl p-3 border border-gray-300 cursor-pointer flex items-center justify-between"
+                                onclick="toggleDropdown()">
+                                <img src="./image/polygon.png" id="selected-img" alt="" class="w-5 h-5 mr-5">
+                                <span class="text text-sm">PLG</span>
+                                <span class="chevron">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="dropdown-options" id="dropdown-options">
+                                <div class="option" data-value="ethereum" onclick="selectOption(this)">
+                                    <img src="./image/polygon.png" alt="polygon logo">
+                                    <span>PLG</span>
+                                </div>
+                                <div class="option" data-value="ethereum" onclick="selectOption(this)">
+                                    <img src="./image/ustether.png" alt="polygon logo">
+                                    <span>USDT</span>
+                                </div>
+                                <div class="option" data-value="ethereum" onclick="selectOption(this)">
+                                    <img src="./image/peernetics.png" alt="polygon logo">
+                                    <span>PNS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <!-- Token Swap From -->
+                            <div class="flex mt-5 border rounded-2xl pl-1 pr-3">
+                                <div class="dropdown-second rounded-3xl bg-transparent">
+                                    <div class="dropdown-selected mr-5" onclick="toggleDropdownSecond()">
+                                        <img src="./image/ustether.png" id="selected-img-second" alt="">
+                                        <span class="chevron">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </div>
+                                    <div class="dropdown-options" id="dropdown-options-second">
+                                        <div class="option" data-value="eth" onclick="selectOptionSecond(this)">
+                                            <img src="./image/ustether.png" alt="polygon logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="number" id="amount" name="amount" placeholder="0" class="outline-none bg-transparent">
+                                    <button type="button" onclick="maxAmount()">Max</button>
+                                </div>
+                            </div>
+
+                            <!-- Swap Icon -->
+                            <div class="swap-icon-container">
+                                <i class="fa-solid fa-arrow-down-long"></i>
+                            </div>
+
+                            <!-- Token Swap To -->
+                            <div class="mb-4 mt-2">
+                                <div class="rounded-2xl p-3 flex border">
+                                    <div>
+                                        <img src="./image/peernetics.png" alt="" class="w-5 h-5 mr-5"
+                                            id="selected-img-to">
+                                    </div>
+                                    <input type="number" id="amount-to" placeholder="0"
+                                        class="outline-none h-full w-full bg-transparent">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex w-full">
+                            <button type="submit"
+                                class="px-4 w-full connect-wallet__button py-2 text-white font-medium rounded-full">Connect
+                                wallet first</button>
+                        </div>
+                    </form>
+
+                    <!-- Coming Soon Message -->
+                    <div id="comingSoonMessage" class="hidden inline-block w-full">
+                        <form id="paymentForm">
+                            <!-- Blockchain Selection -->
+                            <div class="mb-4 mt-2 w-full">
+                                <div class="rounded-2xl p-3 flex border">
+                                    <div>
+                                        <img src="./image/mastercard.png" alt="" class="w-5 h-5 mr-5"
+                                            id="selected-img-to">
+                                    </div>
+                                    <input type="number" id="amount-to" placeholder="5643-1234-1243-2312"
+                                        class="outline-none h-full w-full bg-transparent">
+                                </div>
+                            </div>
+
+                            <div class="relative w-full">
+                                <!-- Token Swap From -->
+                                <div class="mb-4 mt-2">
+                                    <div class="rounded-2xl p-3 flex border">
+                                        <input type="number" id="amount-to" placeholder="12/25"
+                                            class="outline-none h-full w-full bg-transparent">
+                                    </div>
+                                </div>
+
+                                <!-- Token Swap To -->
+                                <div class="mb-4 mt-2">
+                                    <div class="rounded-2xl p-3 flex border">
+                                        <input type="number" id="amount-to" placeholder="232"
+                                            class="outline-none h-full w-full bg-transparent">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex w-full">
+                                <button type="submit"
+                                    class="px-4 w-full connect-wallet__button py-2 text-white font-medium rounded-full">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="histoy-transaction flex items-center justify-center border-t-2 mt-4">
+                        <div class="flex items-center gap-2 text-gray-500 font-normal mt-4">
+                            <i class="fa-solid fa-monument"></i>
+                            <p>History of your transations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white py-2 px-4 mt-2 rounded-md">
+                    <div class="flex items-center justify-center gap-2 text-gray-500 font-normal">
+                        <i class="fa-brands fa-hive"></i>
+                        <p>Rounds Details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
