@@ -11,34 +11,34 @@
 </head>
 
 <body class="">
-    <section id="hero" class="relative min-h-screen bg-blue-50 flex items-center justify-center">
+    <section id="hero" class="counter-hero__section">
         <div
-            class="max-w-[1200px] z-50 flex flex-wrap items-center justify-center gap-10 mx-auto px-5 sm:px-5 py-28 md:py-0 lg:flex-row flex-col">
+            class="counter-hero__section-container">
 
-            <div class="">
-                <div class="w-fit mb-5">
-                    <div id="countdown" class="text-center w-fit border-color px-8 pt-5 pb-8 relative mb-5">
-                        <div class="absolute bg-white px-5 py-1 rounded-2xl next-price">
-                            <p class="text-sm font-semibold">Next price</p>
-                            <p class="text-base span-text__color font-bold text-xl">$0.02938</p>
+            <div class="main-section__wrapper">
+                <div class="next-price__wrapper">
+                    <div id="countdown" class="next-price__wrapper-container">
+                        <div class="next-price">
+                            <p class="next-price__text">Next price</p>
+                            <p class="span-text__color">$0.02938</p>
                         </div>
                         <div class="mb-3">
                             <p class="font-bold text-color">Before Price Increase</p>
                         </div>
-                        <div class="flex gap-3 text-white">
-                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                        <div class="countdown-item__container">
+                            <div class="countdown-item bg-countdown">
                                 <span id="days" class="counter-feed">00</span>
                                 <span style="font-size: 15px;">Day</span>
                             </div>
-                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                            <div class="countdown-item bg-countdown">
                                 <span id="hours" class="counter-feed">00</span>
                                 <span style="font-size: 15px;">Hrs</span>
                             </div>
-                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                            <div class="countdown-item bg-countdown">
                                 <span id="minutes" class="counter-feed ">00</span>
                                 <span style="font-size: 15px;">Mins</span>
                             </div>
-                            <div class="countdown-item bg-blue-300 px-4 md:px-8 py-2 flex flex-col rounded-2xl bg-countdown">
+                            <div class="countdown-item bg-countdown">
                                 <span id="seconds" class="counter-feed">00</span>
                                 <span style="font-size: 15px;">Sec</span>
                             </div>
@@ -46,12 +46,12 @@
                     </div>
                 </div>
                 <h1
-                    class="max-w-xl text-4xl leading-none text-color font-bold font-sans text-center lg:text-5xl lg:text-right lg:leading-tight">
+                    class="text-color">
                     Revolutionary<br />
                     <span class="span-text__color">Crypto</span><br />
                     Payment Gateway<br />
                 </h1>
-                <div class="justify-center lg:justify-end items-center flex md:flex-row flex-col gap-5 mt-10 sm:mt-5">
+                <div class="button-wrapper items-center">
                     <button class="custom-button">
                         Whitepaper
                     </button>
@@ -61,28 +61,28 @@
                 </div>
             </div>
             <div>
-                <div class="w-full max-w-md form-card__bg px-6 pt-6 p-5 rounded-lg shadow-md">
-                    <div class="flex items-center justify-center flex-col">
-                        <h2 class="font-bold text-md text-heading">Buy Peernetics Now!</h2>
-                        <p class="text-sm text-description">USD Raised: <span
-                                class="font-semibold text-heading">$2.070,492</span> / <span
-                                class="font-semibold text-heading">$2,076,196</span></p>
-                        <hr class="horizontal-rule h-2 bg-blue-300 border-none outline-none rounded-full w-full my-2">
+                <div class="form-card__bg">
+                    <div class="form-card__bg-heading">
+                        <h2 class="text-heading">Buy Peernetics Now!</h2>
+                        <p class="text-description">USD Raised: <span
+                                class="text-heading">$2.070,492</span> / <span
+                                class="text-heading">$2,076,196</span></p>
+                        <hr class="horizontal-rule">
                         <p class="text-sm font-semibold text-heading">1PNS = <span class="font-semibold text-description">$0.02852</span></p>
                     </div>
 
                     <!-- Deposit Methods -->
-                    <div class="w-full flex items-center justify-between my-3">
+                    <div class="deposit-method__button">
                         <!-- crypto deposit -->
                         <div id="cryptoBtn"
-                            class="flex items-center justify-center w-full cursor-pointer gap-1 active-underline active"
+                            class="active-underline active"
                             onclick="switchPaymentMethod('crypto')">
                             <i class="fa-brands fa-bitcoin text-lg"></i>
                             <p class="font-semibold text-md">Crypto</p>
                         </div>
                         <!-- card deposit -->
                         <div id="cardBtn"
-                            class="flex items-center justify-center w-full cursor-pointer gap-1 text-gray-500 inactive"
+                            class="inactive"
                             onclick="switchPaymentMethod('card')">
                             <i class="fa-solid fa-credit-card text-lg"></i>
                             <p class="font-semibold text-lg">Credit Card</p>
@@ -91,10 +91,10 @@
 
                     <form id="paymentForm">
                         <!-- Blockchain Selection -->
-                        <div class="dropdown relative inline-block w-full">
-                            <div class="dropdown-selected rounded-2xl p-3 border border-gray-300 cursor-pointer flex items-center justify-between"
+                        <div class="dropdown">
+                            <div class="dropdown-selected "
                                 onclick="toggleDropdown()">
-                                <img src="./image/polygon.png" id="selected-img" alt="" class="w-5 h-5 mr-5">
+                                <img src="./image/polygon.png" id="selected-img" alt="" class="">
                                 <span class="text text-sm">PLG</span>
                                 <span class="chevron">
                                     <i class="fa-solid fa-chevron-down"></i>
@@ -116,10 +116,10 @@
                             </div>
                         </div>
 
-                        <div class="relative">
+                        <div class="token-swap">
                             <!-- Token Swap From -->
-                            <div class="flex mt-5 border rounded-2xl pl-1 pr-3">
-                                <div class="dropdown-second rounded-3xl bg-transparent">
+                            <div class="mt-5">
+                                <div class="dropdown-second">
                                     <div class="dropdown-selected mr-5" onclick="toggleDropdownSecond()">
                                         <img src="./image/ustether.png" id="selected-img-second" alt="">
                                         <span class="chevron">
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div class="input-group">
-                                    <input type="number" id="amount" name="amount" placeholder="0" class="outline-none bg-transparent">
+                                    <input type="number" id="amount" name="amount" placeholder="0" class="">
                                     <button type="button" onclick="maxAmount()">Max</button>
                                 </div>
                             </div>
@@ -144,76 +144,76 @@
                             </div>
 
                             <!-- Token Swap To -->
-                            <div class="mb-4 mt-2">
-                                <div class="rounded-2xl p-3 flex border">
-                                    <div>
-                                        <img src="./image/peernetics.png" alt="" class="w-5 h-5 mr-5"
+                            <div class="token-swap__to">
+                                <div class="">
+                                    <div class="token-swap__to-image_wrapper">
+                                        <img src="./image/peernetics.png" alt="" class="mr-5"
                                             id="selected-img-to">
                                     </div>
                                     <input type="number" id="amount-to" placeholder="0"
-                                        class="outline-none h-full w-full bg-transparent">
+                                        class="">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Submit Button -->
-                        <div class="flex w-full">
+                        <div class="token-swap__button-wrapper">
                             <button type="submit"
-                                class="px-4 w-full connect-wallet__button py-2 text-white font-medium rounded-full">Connect
+                                class="connect-wallet__button">Connect
                                 wallet first</button>
                         </div>
                     </form>
 
                     <!-- Coming Soon Message -->
-                    <div id="comingSoonMessage" class="hidden inline-block w-full">
+                    <div id="comingSoonMessage" class="hidden coming-soon__wrapper">
                         <form id="paymentForm">
                             <!-- Blockchain Selection -->
-                            <div class="mb-4 mt-2 w-full">
-                                <div class="rounded-2xl p-3 flex border">
+                            <div class="">
+                                <div class="form-field">
                                     <div>
-                                        <img src="./image/mastercard.png" alt="" class="w-5 h-5 mr-5"
+                                        <img src="./image/mastercard.png" alt="" class=""
                                             id="selected-img-to">
                                     </div>
                                     <input type="number" id="amount-to" placeholder="5643-1234-1243-2312"
-                                        class="outline-none h-full w-full bg-transparent">
+                                        class="forn-input__field">
                                 </div>
                             </div>
 
-                            <div class="relative w-full">
+                            <div class="">
                                 <!-- Token Swap From -->
-                                <div class="mb-4 mt-2">
-                                    <div class="rounded-2xl p-3 flex border">
+                                <div class="coming-soon__token-swap">
+                                    <div class="">
                                         <input type="number" id="amount-to" placeholder="12/25"
-                                            class="outline-none h-full w-full bg-transparent">
+                                            class="forn-input__field">
                                     </div>
                                 </div>
 
                                 <!-- Token Swap To -->
-                                <div class="mb-4 mt-2">
-                                    <div class="rounded-2xl p-3 flex border">
+                                <div class="coming-soon__token-swap-from">
+                                    <div class="">
                                         <input type="number" id="amount-to" placeholder="232"
-                                            class="outline-none h-full w-full bg-transparent">
+                                            class="forn-input__field">
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Submit Button -->
-                            <div class="flex w-full">
+                            <div class="token-swap__button-wrapper">
                                 <button type="submit"
-                                    class="px-4 w-full connect-wallet__button py-2 text-white font-medium rounded-full">Submit</button>
+                                    class="connect-wallet__button">Submit</button>
                             </div>
                         </form>
                     </div>
 
-                    <div class="histoy-transaction flex items-center justify-center border-t-2 mt-4">
-                        <div class="flex items-center gap-2 text-gray-500 font-normal mt-4">
+                    <div class="history-transaction">
+                        <div class="">
                             <i class="fa-solid fa-monument"></i>
                             <p>History of your transations</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white py-2 px-4 mt-2 rounded-md">
-                    <div class="flex items-center justify-center gap-2 text-gray-500 font-normal">
+                <div class="rounds-details">
+                    <div class="">
                         <i class="fa-brands fa-hive"></i>
                         <p>Rounds Details</p>
                     </div>
